@@ -62,7 +62,7 @@ class UsuarioController extends Controller
             return redirect()->route('usuarios.login');
         }
 
-        return redirect()->route('contas.index');
+        return view('usuarios.perfil', compact('usuario'));
     }
 
     public function logout()
