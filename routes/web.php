@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContaController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,3 +12,15 @@ Route::post('/usuarios/login', [UsuarioController::class, 'login'])->name('usuar
 Route::post('/usuarios/logout', [UsuarioController::class, 'logout'])->name('usuarios.logout');
 
 Route::get('/usuarios/perfil', [UsuarioController::class, 'perfil'])->name('usuarios.perfil');
+
+
+
+
+
+Route::get('/contas', [ContaController::class, 'index'])->name('contas.index');
+
+// Formulário de criação
+Route::get('/contas/create', [ContaController::class, 'create'])->name('contas.create');
+
+// Armazenar nova conta
+Route::post('/contas', [ContaController::class, 'store'])->name('contas.store');

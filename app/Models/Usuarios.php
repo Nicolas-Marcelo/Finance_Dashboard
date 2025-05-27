@@ -28,4 +28,10 @@ class Usuarios extends Authenticatable
     {
         return $this->senha;
     }
+
+    public function contas()
+    {
+        return $this->hasMany(Contas::class, 'usuario_id');
+    }
+
 }

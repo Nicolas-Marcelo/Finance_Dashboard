@@ -52,7 +52,7 @@ class UsuarioController extends Controller
 
         session(['token' => $token, 'usuario' => $usuario]);
 
-        return redirect()->route('usuarios.perfil');
+        return redirect()->route('contas.index');
     }
 
     public function perfil()
@@ -62,7 +62,7 @@ class UsuarioController extends Controller
             return redirect()->route('usuarios.login');
         }
 
-        return view('usuarios.perfil', compact('usuario'));
+        return redirect()->route('contas.index');
     }
 
     public function logout()
